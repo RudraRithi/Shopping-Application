@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Details</title>
+</head>
+<body>
+    <h1>User Details</h1>
+
+    <!-- Display detailed information about the user -->
+    <div th:if="${user}">
+        <p><strong>Username:</strong> <span th:text="${user.username}"></span></p>
+        <p><strong>Email:</strong> <span th:text="${user.email}"></span></p>
+
+        <!-- Add additional user details as needed -->
+
+        <!-- Add a link or button to edit the user details -->
+        <a th:href="@{'/user/edit/' + ${user.id}}">Edit User</a>
+        
+        <!-- Add a link or button to delete the user (if applicable) -->
+        <a th:href="@{'/user/delete/' + ${user.id}}">Delete User</a>
+
+        <hr/>
+    </div>
+
+    <!-- Add additional content as needed -->
+
+</body>
+</html>
